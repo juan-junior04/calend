@@ -1,0 +1,90 @@
+<form [formGroup]="formulario" >
+  <div class="form-group">
+    <span class="p-float-label">
+      <input  class="personalizado" 
+      id="float-input" 
+      type="text"
+      formControlName="nombre_empresa" 
+      pInputText>
+      <label for="float-input">Nombre de la Empresa</label>
+    </span>
+    <span class="p-float-label">
+      <input  class="personalizado" 
+      id="float-input" 
+      type="email"
+      formControlName="email" 
+      pInputText>
+      <label for="float-input">Email</label>
+    </span>
+  </div>
+
+  <div class="form-group">
+    <span class="p-float-label">
+      <input  class="personalizado" 
+      id="float-input" 
+      type="number"
+      formControlName="telefono"
+      pInputText>
+      <label for="float-input">Teléfono</label>
+    </span>
+    <span class="p-float-label">
+      <input  class="personalizado" 
+      id="float-input" 
+      type="number"
+      formControlName="nit_empresa"
+      pInputText>
+      <label for="float-input">NIT</label>
+    </span>
+  </div>
+
+ 
+  <div class="form-group">
+   
+  </div>
+
+  <div class="form-group">
+    <span class="p-float-label">
+      <input  class="personalizado" 
+      id="float-input" 
+      type="number"
+      formControlName="direccion"
+      pInputText>
+      <label for="float-input">Direccion</label>
+    </span>
+    <span class="p-float-label">
+    
+      <p-calendar [showIcon]="true" inputId="icon" formControlName="inicio" ></p-calendar>
+      <label for="float-input">Inicio</label>
+    </span>
+    <span class="p-float-label">
+      <p-calendar [showIcon]="true" inputId="icon" formControlName="finalizar"></p-calendar>
+      <label for="float-input">Finalizar</label>
+    </span>
+  </div>
+
+  
+ 
+  <div class="form-group">
+   
+    
+  </div>
+
+  <div class="form-group">
+    
+    <span class="p-float-label">
+      <textarea rows="5"
+       cols="30" 
+       placeholder="Your Message" 
+       formControlName="observacion" 
+       pInputTextarea></textarea>
+      <label for="float-input">Observacion</label>
+    </span>
+  </div>
+
+
+
+  <div class="card flex justify-content-center">
+  <p-button label="Enviar" icon="pi pi-check"></p-button>
+</div>
+
+</form>

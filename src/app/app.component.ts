@@ -1,8 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import {FullCalendarComponent } from '@fullcalendar/angular';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ModalComponent } from './modal/modal.component';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import esLocale from '@fullcalendar/core/locales/es';
+import { ModalService } from './modal/modalServices/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +13,13 @@ import esLocale from '@fullcalendar/core/locales/es';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  bsModalRef!: BsModalRef;
+
+  constructor(private modalService:ModalService){
+   
+  }
+
+  modalOpen: boolean = false;
 
   @ViewChild('calendar') appComponent: FullCalendarComponent | undefined;
 
@@ -34,4 +44,11 @@ export class AppComponent {
     locale: esLocale
     // Otras opciones de configuración
   };
+
+
+ 
+
+  openModal() {
+    this.modalService.openModal();
+  }
 }
