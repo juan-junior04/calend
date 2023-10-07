@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { ModalService } from './modalServices/modal.service';
 
 
 import { BsModalRef } from 'ngx-bootstrap/modal';
@@ -17,7 +18,7 @@ export class ModalComponent {
 
   constructor
   (public bsModalRef: BsModalRef,
-  private fb: FormBuilder) 
+  private fb: FormBuilder,private modalServices:ModalService) 
   {
 
     this.formulario = this.fb.group({
@@ -34,7 +35,9 @@ export class ModalComponent {
 
   }
 
-    
+  close(){
+    this.modalServices.close();
+  }
 
 }
 

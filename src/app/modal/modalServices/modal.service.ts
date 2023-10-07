@@ -12,6 +12,10 @@ export class ModalService {
   constructor(private modalService: BsModalService) { }
 
   openModal() {
-    this.bsModalRef = this.modalService.show(ModalComponent, { class: 'modal-lg' });
+    this.bsModalRef = this.modalService.show(ModalComponent, { class: 'modal-md' });
+  }
+
+  close(){
+    this.bsModalRef?.hide();
   }
 }

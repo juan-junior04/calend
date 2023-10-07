@@ -1,40 +1,50 @@
 <form [formGroup]="formulario" >
-  <div class="form-group">
-    <span class="p-float-label">
-      <input  class="personalizado" 
+  <div class="formulario">
+
+  <div class="form-group" >
+    <div class="diagonal">
+    
+      <input   
       id="float-input" 
       type="text"
       formControlName="nombre_empresa" 
+      placeholder="Nombre Empresa"
       pInputText>
-      <label for="float-input">Nombre de la Empresa</label>
-    </span>
-    <span class="p-float-label">
-      <input  class="personalizado" 
-      id="float-input" 
-      type="email"
-      formControlName="email" 
-      pInputText>
-      <label for="float-input">Email</label>
-    </span>
-  </div>
-
-  <div class="form-group">
-    <span class="p-float-label">
-      <input  class="personalizado" 
+    
+      <input  
+      class="diagonal"
       id="float-input" 
       type="number"
       formControlName="telefono"
+      placeholder="Telefono"
       pInputText>
-      <label for="float-input">Teléfono</label>
-    </span>
-    <span class="p-float-label">
+  
+   </div>
+  </div>
+  <div class="form-group">
+     <input   
+     class="personalizado" 
+      id="float-input" 
+      type="email"
+      formControlName="email" 
+      placeholder="Email"
+      pInputText>
+     
       <input  class="personalizado" 
       id="float-input" 
       type="number"
       formControlName="nit_empresa"
+      placeholder="Nit Empresa"
       pInputText>
-      <label for="float-input">NIT</label>
-    </span>
+
+      <input  class="personalizado" 
+      id="float-input" 
+      type="number"
+      formControlName="direccion"
+      placeholder="Direccion"
+      pInputText>
+
+  
   </div>
 
  
@@ -43,23 +53,17 @@
   </div>
 
   <div class="form-group">
-    <span class="p-float-label">
-      <input  class="personalizado" 
-      id="float-input" 
-      type="number"
-      formControlName="direccion"
-      pInputText>
-      <label for="float-input">Direccion</label>
-    </span>
+    <div class="diagonal">
     <span class="p-float-label">
     
-      <p-calendar [showIcon]="true" inputId="icon" formControlName="inicio" ></p-calendar>
+      <p-calendar [showIcon]="true"  id="float-input" formControlName="inicio" ></p-calendar>
       <label for="float-input">Inicio</label>
     </span>
     <span class="p-float-label">
-      <p-calendar [showIcon]="true" inputId="icon" formControlName="finalizar"></p-calendar>
+      <p-calendar [showIcon]="true" id="float-input" formControlName="finalizar"></p-calendar>
       <label for="float-input">Finalizar</label>
     </span>
+  </div>
   </div>
 
   
@@ -73,18 +77,27 @@
     
     <span class="p-float-label">
       <textarea rows="5"
-       cols="30" 
-       placeholder="Your Message" 
+       cols="35" 
+       placeholder="Agregar Labor" 
        formControlName="observacion" 
        pInputTextarea></textarea>
       <label for="float-input">Observacion</label>
     </span>
   </div>
 
-
-
-  <div class="card flex justify-content-center">
-  <p-button label="Enviar" icon="pi pi-check"></p-button>
+<div class="botones">
+  <div class="flex flex-wrap gap-2" >
+    <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"></button>
+   
+  </div>
+  <div class="flex flex-wrap gap-2">
+  
+    <button pButton pRipple type="button" 
+    icon="pi pi-times" 
+    class="p-button-rounded p-button-danger"
+    (click)="close()"></button>
+  </div>
 </div>
 
+</div>
 </form>
