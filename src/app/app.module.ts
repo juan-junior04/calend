@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { SliderModule } from 'primeng/slider';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -40,6 +42,7 @@ import { SliderModule } from 'primeng/slider';
   
   ],
   imports: [
+	HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -71,7 +74,7 @@ import { SliderModule } from 'primeng/slider';
 		ButtonModule
     
   ],
-  providers: [ModalModule,ModalComponent],
+  providers: [ModalModule,ModalComponent,HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {

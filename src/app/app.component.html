@@ -11,15 +11,15 @@
   <button (click)="openModal()">Abrir Modal</button>
 
   <!-- Utilizar el componente de modal Bootstrap -->
-  
-  <div>
+  <div class="calendar-container">
+  <div class="calendar" style="width: 800px; height: 600px;">
     <full-calendar
       #calendar
       [options]="calendarOptions"
+     
     ></full-calendar>
-    
-
   </div>
+</div>
 </body>
 </html>
 <script src="js/es.js"></script>

@@ -39,5 +39,9 @@ export class ModalComponent {
     this.modalServices.close();
   }
 
+  
+
+
+  
 }
 

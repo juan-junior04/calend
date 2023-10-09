@@ -1,0 +1,36 @@
+
+
+.calendar{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+    
+}
+.fc-direction-ltr {
+    height: 600px;
+    direction: ltr;
+    width: 800px;
+    text-align: left;
+    padding: 50px;
+    background-color: #f5f5f5;
+    border-radius: 40px;
+}
+.fc-day {
+    width: 40px; /* Ancho de las celdas */
+    height: 40px; /* Alto de las celdas */
+}
+.fc-event-title {
+    font-size: 14px; /* Tamaño del texto */
+}
+
+/* Cambia el tamaño del título de las celdas */
+.fc-daygrid-day-top .fc-day-number {
+    font-size: 16px; /* Tamaño del texto de las celdas */
+}
+.calendar-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+  }

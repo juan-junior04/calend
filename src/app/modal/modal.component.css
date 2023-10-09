@@ -15,8 +15,8 @@
 }
 
 .modal-md .modal-dialog {
-  max-width: 80%; /* Ancho personalizado (puedes ajustar el porcentaje) */
-  max-height: 80%; /* Altura personalizada (puedes ajustar el porcentaje) */
+  max-width: 80%; 
+  max-height: 80%; 
 }
 .form-group{
   display: flex;

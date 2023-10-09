@@ -27,13 +27,16 @@ export class AppComponent {
     initialView: 'dayGridMonth',
     plugins: [dayGridPlugin, interactionPlugin],
       events: [
+   
+     
+    
     {
       title: 'Mi evento',
       start: '2023-09-10T00:00:00', // Fecha y hora de inicio
       end: '2023-09-15T12:00:00',   // Fecha y hora de finalización
       // Otras propiedades del evento...
     },
-     {
+    {
       title: 'Mi evento',
       start: '2023-09-10T00:00:00', // Fecha y hora de inicio
       end: '2023-09-15T12:00:00',   // Fecha y hora de finalización
