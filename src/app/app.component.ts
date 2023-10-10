@@ -18,7 +18,7 @@ export class AppComponent {
   constructor(private modalService:ModalService){
    
   }
-
+  showFiller = false;
   modalOpen: boolean = false;
 
   @ViewChild('calendar') appComponent: FullCalendarComponent | undefined;
@@ -34,6 +34,7 @@ export class AppComponent {
       title: 'Mi evento',
       start: '2023-09-10T00:00:00', // Fecha y hora de inicio
       end: '2023-09-15T12:00:00',   // Fecha y hora de finalización
+      classNames: 'no-underline',
       // Otras propiedades del evento...
     },
     {

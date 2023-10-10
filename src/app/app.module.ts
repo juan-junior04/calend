@@ -31,17 +31,26 @@ import { ColorPickerModule } from 'primeng/colorpicker';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { SliderModule } from 'primeng/slider';
 import { HttpClient } from '@angular/common/http';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import {MatButtonModule} from '@angular/material/button';
+import {NgIf} from '@angular/common';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalComponent
+    ModalComponent,
+    SidenavComponent
   
   ],
   imports: [
+	NgIf,
+	MatButtonModule,
+	MatSidenavModule,
+	MatSlideToggleModule,
 	HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,

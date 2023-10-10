@@ -8,18 +8,33 @@
   
 </head>
 <body>
-  <button (click)="openModal()">Abrir Modal</button>
+  
 
   <!-- Utilizar el componente de modal Bootstrap -->
-  <div class="calendar-container">
-  <div class="calendar" style="width: 800px; height: 600px;">
-    <full-calendar
-      #calendar
-      [options]="calendarOptions"
-     
-    ></full-calendar>
-  </div>
-</div>
+
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened  class="barra">
+    <div class="logo">
+      <img src="assets/WhatsApp_Image_2023-10-10_at_10.56.40_AM-transformed.png" 
+      alt="" class="imagen-logo"> 
+    </div>
+    <button pButton pRipple class="boton-side" type="button" 
+    label="Agregar Evento"  (click)="openModal()"></button>
+
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="calendar-container">
+      <div class="calendar" style="width: 800px; height: 600px;">
+        <full-calendar
+          #calendar
+          [options]="calendarOptions"
+          class="custom-calendar"
+        ></full-calendar>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
 </body>
 </html>
 <script src="js/es.js"></script>
