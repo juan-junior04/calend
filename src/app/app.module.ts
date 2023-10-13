@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TabViewModule } from 'primeng/tabview';
+import { PanelModule } from 'primeng/panel';
 import { ModalComponent } from './modal/modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { InputTextModule } from "primeng/inputtext";
@@ -60,6 +62,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     FormsModule,
     ReactiveFormsModule,
     InputTextModule,
+	TabViewModule,
+	PanelModule,
     AutoCompleteModule,
 		CalendarModule,
 		ChipsModule,

@@ -1,14 +1,29 @@
+
+/*barra-side-nav */
+
 .barra {
     width: 250px; /* El ancho que desees */
     background-color: #BAFF76;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
   }
+
+/*contenido */
+
+.contenido{
+    height: 100%;
+}
+
 
 .calendar{
     display: flex;
     justify-content: center;
     text-align: center;
     text-decoration: none;
+    height: 100%;
     
     
 }
@@ -55,7 +70,6 @@ a{
     display: flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
-    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
     text-decoration: none;
   }
 .imagen-logo{
@@ -66,4 +80,60 @@ a{
  .boton-side{
     width: 250px;
     height: 50px;
+    background-color: #BAFF76;
+ }
+
+ .boton-agregar-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+ }
+
+ .boton-agregar{
+    background-color: white;
+    color: black;
+    display: flex;
+    gap: 4px;
+    border-radius: 13px;
+    border:  1px solid black;
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: 21px;
+ }
+ .boton-agregar:hover{
+    background-color:#F4F6F6 ; 
+    border: black;
+ }
+ .boton-agregar:active{
+    border:   1px solid black; 
+ }
+
+ .boton-mes{
+    width: 254px;
+    display: flex;
+    justify-content: center;
+    background-color:  #BAFF76;
+    border: none;
+    color: black;
+    font-size: 20px;
+ }
+
+ .boton-mes:hover{
+    background-color:  #D1FFA0;
+ }
+
+ .boton-mes:active,
+ .boton-mes:focus {
+  outline: none; /* Elimina el marco de enfoque */
+  box-shadow: none; /* Elimina cualquier sombra o marco en clic */
+}
+
+
+
+
+
+ /*icons*/
+ .icons{
+    width: 30px;
  }

@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@900&display=swap" rel="stylesheet">
 
   
 </head>
@@ -18,23 +21,118 @@
       <img src="assets/WhatsApp_Image_2023-10-10_at_10.56.40_AM-transformed.png" 
       alt="" class="imagen-logo"> 
     </div>
-    <button pButton pRipple class="boton-side" type="button" 
-    label="Agregar Evento"  (click)="openModal()"></button>
 
-  </mat-drawer>
-  <mat-drawer-content>
-    <div class="calendar-container">
-      <div class="calendar" style="width: 800px; height: 600px;">
-        <full-calendar
-          #calendar
-          [options]="calendarOptions"
-          class="custom-calendar"
-        ></full-calendar>
+    <div class="boton-agregar-div">
+      <button pButton pRipple class="boton-side" type="button" 
+     class="boton-agregar"
+      (click)="openModal()"> Agregar Evento <img src="assets/add-circle-svgrepo-com.svg" 
+      alt="" class="icons"></button>
+    </div>
+
+    <div class="meses">
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Enero</button>
+      </div>
+
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Frebero</button>
+      </div>
+
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Marzo</button>
+      </div>
+
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Abril</button>
+      </div>
+
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Mayo</button>
+      </div>
+
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Junio</button>
+      </div>
+
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Julio</button>
+      </div>
+
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Agosto</button>
+      </div>
+
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Septiembre</button>
+      </div>
+      
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Octubre</button>
+      </div>
+
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Noviembre</button>
+      </div>
+
+      <div class="boton-agregar-div">
+          <button pButton pRipple class="boton-side" type="button" 
+          class="boton-mes"
+          >Diciembre</button>
       </div>
     </div>
+  </mat-drawer>
+  <mat-drawer-content class="contenido">
+<p-tabView >
+                <p-tabPanel header="Header I" class="contenido">
+                    <div class="calendar-container">
+                      <div class="calendar" >
+                        <full-calendar
+                          #calendar
+                          [options]="calendarOptions"
+                          class="custom-calendar"
+                        ></full-calendar>
+                      </div>
+                    </div>
+                </p-tabPanel>
+
+                <p-tabPanel header="Header II" class="">
+                  <div class="calendar-container">
+                    <div class="calendar" >
+                      <full-calendar
+                        #calendar
+                        [options]="calendarOptions"
+                        class="custom-calendar"
+                      ></full-calendar>
+                    </div>
+                  </div>
+                </p-tabPanel>
+
+            </p-tabView>
   </mat-drawer-content>
 </mat-drawer-container>
 
 </body>
 </html>
-<script src="js/es.js"></script>
+<script src="js/ .js"></script>
