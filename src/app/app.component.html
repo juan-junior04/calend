@@ -33,79 +33,91 @@
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 1)"
           >Enero</button>
       </div>
 
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 2)"
           >Frebero</button>
       </div>
 
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 3)"
           >Marzo</button>
       </div>
 
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 4)"
           >Abril</button>
       </div>
 
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 5)"
           >Mayo</button>
       </div>
 
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 6)"
           >Junio</button>
       </div>
 
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 7)"
           >Julio</button>
       </div>
 
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 8)"
           >Agosto</button>
       </div>
 
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 9)"
           >Septiembre</button>
       </div>
       
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 10)"
           >Octubre</button>
       </div>
 
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 11)"
           >Noviembre</button>
       </div>
 
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
           class="boton-mes"
+          (click)="changeMonth(2023, 12)"
           >Diciembre</button>
       </div>
     </div>
   </mat-drawer>
   <mat-drawer-content class="contenido">
 <p-tabView >
-                <p-tabPanel header="Header I" class="contenido">
+                <p-tabPanel header="Calendario" class="contenido">
                     <div class="calendar-container">
                       <div class="calendar" >
                         <full-calendar
@@ -117,16 +129,57 @@
                     </div>
                 </p-tabPanel>
 
-                <p-tabPanel header="Header II" class="">
-                  <div class="calendar-container">
-                    <div class="calendar" >
-                      <full-calendar
-                        #calendar
-                        [options]="calendarOptions"
-                        class="custom-calendar"
-                      ></full-calendar>
+                <p-tabPanel header="Tabla" class="">
+                    <div class="card">
+                        <p-table [value]="lista"   >
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Telefono</th>
+                                    <th>Nit</th>
+                                    <th>Direccion</th>
+                                    <th>Inicio</th>
+                                    <th>Finalizar</th>
+                                    <th>Observacion</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-customer let-rowIndex="rowIndex">
+                                <tr pRowGroupHeader>
+                                   
+                                </tr>
+                                <tr>
+                                    <td style="min-width: 100px;">
+                                        {{customer.id}}
+                                    </td>
+                                    <td style="min-width: 200px;">
+                                        {{customer.nombre_empresa}}
+                                    </td>
+                                     <td style="min-width: 200px;">
+                                        {{customer.telefono}}
+                                    </td>
+                                    <td style="min-width: 200px;">
+                                        {{customer.direccion}}
+                                    </td>
+                                    
+                                    <td style="min-width: 200px;">
+                                        {{customer.email}}
+                                    </td>
+                                    
+                                    <td style="min-width: 200px;">
+                                        {{customer.inicio}}
+                                    </td>
+                                    <td style="min-width: 200px;">
+                                        {{customer.finalizacion}}
+                                    </td>
+                                    <td style="min-width: 200px;">
+                                        {{customer.observacion}}
+                                    </td>
+                                    
+                                </tr>
+                            </ng-template>
+                        </p-table>
                     </div>
-                  </div>
                 </p-tabPanel>
 
             </p-tabView>

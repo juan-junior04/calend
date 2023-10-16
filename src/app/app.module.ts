@@ -38,6 +38,13 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatButtonModule} from '@angular/material/button';
 import {NgIf} from '@angular/common';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { TableModule } from 'primeng/table';
+import { FileUploadModule } from 'primeng/fileupload';
+import { RippleModule } from 'primeng/ripple';
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
+import { DialogModule } from 'primeng/dialog';
+import { MessageService } from 'primeng/api';
 
 
 
@@ -52,6 +59,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 	NgIf,
 	MatButtonModule,
 	MatSidenavModule,
+	TableModule,
 	MatSlideToggleModule,
 	HttpClientModule,
     BrowserModule,
@@ -60,9 +68,14 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     FullCalendarModule,
     ModalModule.forRoot(),
     FormsModule,
+	RippleModule,
     ReactiveFormsModule,
+	FileUploadModule,
     InputTextModule,
+	ToastModule,
 	TabViewModule,
+	ToolbarModule,
+	DialogModule,
 	PanelModule,
     AutoCompleteModule,
 		CalendarModule,
@@ -87,7 +100,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 		ButtonModule
     
   ],
-  providers: [ModalModule,ModalComponent,HttpClient],
+  providers: [ModalModule,ModalComponent,HttpClient,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

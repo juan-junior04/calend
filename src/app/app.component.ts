@@ -55,4 +55,64 @@ export class AppComponent {
   openModal() {
     this.modalService.openModal();
   }
+
+
+  //function mes calendario.
+  changeMonth(year: number, month: number) {
+    if (this.appComponent) {
+      const calendarApi = this.appComponent.getApi(); 
+      calendarApi.gotoDate(`${year}-${String(month).padStart(2, '0')}-01`); 
+    }
+  }
+
+  lista:any = [{
+    id:"1",
+    nombre_empresa:"Carupana",
+    telefono:"3126190683",
+    direccion:"Mz 17 Lt 9",
+    email:"juandavidruedaramirez7@gamil.com",
+    inicio:"12/05/2023",
+    finalizacion:"12/05/2023",
+    observacion:"Calibracion de Manometro"
+  },{
+    id:"1",
+    nombre_empresa:"Carupana",
+    telefono:"3126190683",
+    direccion:"Mz 17 Lt 9",
+    email:"juandavidruedaramirez7@gamil.com",
+    inicio:"12/05/2023",
+    finalizacion:"12/05/2023",
+    observacion:"Calibracion de Manometro"
+  },
+  {
+    id:"1",
+    nombre_empresa:"Carupana",
+    telefono:"3126190683",
+    direccion:"Mz 17 Lt 9",
+    email:"juandavidruedaramirez7@gamil.com",
+    inicio:"12/05/2023",
+    finalizacion:"12/05/2023",
+    observacion:"Calibracion de Manometro"
+  },
+  {
+    id:"1",
+    nombre_empresa:"Carupana",
+    telefono:"3126190683",
+    direccion:"Mz 17 Lt 9",
+    email:"juandavidruedaramirez7@gamil.com",
+    inicio:"12/05/2023",
+    finalizacion:"12/05/2023",
+    observacion:"Calibracion de Manometro"
+  },
+  {
+    id:"1",
+    nombre_empresa:"Carupana",
+    telefono:"3126190683",
+    direccion:"Mz 17 Lt 9",
+    email:"juandavidruedaramirez7@gamil.com",
+    inicio:"12/05/2023",
+    finalizacion:"12/05/2023",
+    observacion:"Calibracion de Manometro"
+  }]
 }
+

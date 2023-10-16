@@ -1,15 +1,17 @@
 
 /*barra-side-nav */
 
+/* Estilo de la barra de desplazamiento */
 .barra {
-    width: 250px; /* El ancho que desees */
-    background-color: #BAFF76;
+    width: 250px; /* Ancho personalizado */
+    background-color: #BAFF76; /* Color de fondo personalizado */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
   }
+  
+  
 
 /*contenido */
 
@@ -30,7 +32,7 @@
 
 
 .fc-direction-ltr {
-    height: 600px;
+    height: 550px;
     direction: ltr;
     width: 800px;
     text-align: left;
@@ -68,7 +70,6 @@ a{
 
 .calendar-container {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     text-decoration: none;
   }
@@ -95,7 +96,7 @@ a{
     color: black;
     display: flex;
     gap: 4px;
-    border-radius: 13px;
+
     border:  1px solid black;
     height: 50px;
     margin-top: 30px;
@@ -137,3 +138,9 @@ a{
  .icons{
     width: 30px;
  }
+
+ /*card*/
+.card{
+    max-width: 1000px;
+}
+ 
