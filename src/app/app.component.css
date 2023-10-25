@@ -141,6 +141,23 @@ a{
 
  /*card*/
 .card{
+    max-height: 500px;
+    overflow-y: scroll;
     max-width: 1000px;
 }
- 
+ /*botones update y dalete yable*/
+ .button-function{
+    display: flex;
+    height: 30px;
+    width: 120px;
+    gap: 10px;
+    
+ }
+
+ .butto{
+    height: 30px;
+ }
+
+ .butto-delete{
+    background-color: red;
+ }

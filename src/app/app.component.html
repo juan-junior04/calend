@@ -131,17 +131,19 @@
 
                 <p-tabPanel header="Tabla" class="">
                     <div class="card">
-                        <p-table [value]="lista"   >
+                        <p-table  [value]="eventos"  >
                             <ng-template pTemplate="header">
                                 <tr>
                                     <th>Id</th>
                                     <th>Nombre</th>
                                     <th>Telefono</th>
                                     <th>Nit</th>
+                                    <th>Email</th>
                                     <th>Direccion</th>
                                     <th>Inicio</th>
                                     <th>Finalizar</th>
                                     <th>Observacion</th>
+                                    <th></th>
                                 </tr>
                             </ng-template>
                             <ng-template pTemplate="body" let-customer let-rowIndex="rowIndex">
@@ -159,21 +161,34 @@
                                         {{customer.telefono}}
                                     </td>
                                     <td style="min-width: 200px;">
-                                        {{customer.direccion}}
+                                        {{customer.nit_empresa}}
                                     </td>
-                                    
                                     <td style="min-width: 200px;">
                                         {{customer.email}}
+                                    </td>
+                                    <td style="min-width: 200px;">
+                                        {{customer.direccion}}
                                     </td>
                                     
                                     <td style="min-width: 200px;">
                                         {{customer.inicio}}
                                     </td>
                                     <td style="min-width: 200px;">
-                                        {{customer.finalizacion}}
+                                        {{customer.finalizar}}
                                     </td>
                                     <td style="min-width: 200px;">
                                         {{customer.observacion}}
+                                    </td>
+                                    <td style="min-width: 200px;">
+                                        <span class="button-function">
+                                            <button pButton pRipple icon="pi pi-undo" class="butto-view"></button>
+                                            <button pButton pRipple  icon="pi pi-eye" 
+                                            (click)="cargarFormu(customer)"
+                                            class="butto-update"></button>
+                                            <button pButton pRipple
+                                            icon="pi pi-trash" class="butto-delete"
+                                            (click)="openDelete(customer)"></button>
+                                        </span>
                                     </td>
                                     
                                 </tr>

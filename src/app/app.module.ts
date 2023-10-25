@@ -45,6 +45,7 @@ import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { DialogModule } from 'primeng/dialog';
 import { MessageService } from 'primeng/api';
+import { ModalDeleteComponent } from './modal-delete/modal-delete.component';
 
 
 
@@ -52,7 +53,8 @@ import { MessageService } from 'primeng/api';
   declarations: [
     AppComponent,
     ModalComponent,
-    SidenavComponent
+    SidenavComponent,
+    ModalDeleteComponent
   
   ],
   imports: [

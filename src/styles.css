@@ -18,7 +18,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .p-tabview .p-tabview-panels {
   background: #ffffff;
-  padding-left: 5.25rem;
   border: 0 none;
   color: #495057;
   border-bottom-right-radius: 0;

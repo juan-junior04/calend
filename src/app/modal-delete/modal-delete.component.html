@@ -1,0 +1,22 @@
+<div >
+    <div class="modal-header">
+        <h5 class="modal-title">Confirmar Eliminación</h5>
+        <button pButton pRipple type="button" 
+        icon="pi pi-times" 
+        (click)="closeDelete()"
+        ></button>
+    </div>
+    <div class="modal-body">
+        <p>¿Está seguro de que desea eliminar este dato?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger"
+        (click)="delete()">Sí</button>
+        <button type="button" class="btn btn-secondary" 
+        (click)="closeDelete()">No</button>
+    </div>
+    
+  </div>
+  
+
+
