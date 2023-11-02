@@ -12,7 +12,18 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 
 export class ModalComponent {
   formulario:FormGroup<any>;
-
+  procentaje = [
+    { label: '10%', value:"10"},
+    { label: '20%', value:"20"},
+    { label: '30%', value:"30"},
+    { label: '40%', value:"40"},
+    { label: '50%', value:"50"},
+    { label: '60%', value:"60"},
+    { label: '70%', value:"70"},
+    { label: '80%', value:"80"},
+    { label: '90%', value:"90"},
+    { label: '100%', value:"100"}
+]
 
   constructor
   (public bsModalRef: BsModalRef,
@@ -29,6 +40,8 @@ export class ModalComponent {
       observacion: new FormControl('',Validators.required),
       inicio: new FormControl('',Validators.required),
       finalizar: new FormControl('',Validators.required),
+      color: new FormControl('',Validators.required),
+      barra: new FormControl('',Validators.required)
     })
 
 
@@ -37,10 +50,11 @@ export class ModalComponent {
   close(){
     this.modalServices.close();
   }
+  open(){
+    this.modalServices.openModal();
+  }
 
   create() {
-
-  
       const event =  this.formulario.value
   if (!event.id) {
     // Si event.id no está definido, significa que es un nuevo evento y debe ser creado.
@@ -56,23 +70,30 @@ export class ModalComponent {
     this.modalServices.updateEvent(event).subscribe((response: any) => {
       // Luego de actualizar el evento, puedes manejar la respuesta aquí si es necesario.
       console.log('Evento actualizado:', response);
+      window.location.reload();
       // Aquí puedes realizar otras acciones después de actualizar el evento.
     });
   }
 
 }
 
-cargarEventoSeleccionado(evento:any) {
-  this.formulario.patchValue({
-    nombre_empresa: evento.nombreEmpresa,
-    telefono: evento.telefono,
-    email: evento.email,
-    nit_empresa: evento.nitEmpresa,
-    direccion: evento.direccion,
-    inicio: evento.fechaInicio,
-    finalizar: evento.fechaFinalizacion,
-    observacion: evento.observacion
-  });
+cargarEvento(event: any) {
+  try {
+    // Formatear los campos 'inicio' y 'finalizar' al formato 'mes/día/año'
+  
+    // Actualizar el objeto 'event' con los campos formateados
+
+
+    // Actualizar todo el formulario con el objeto 'event' modificado
+    this.formulario.setValue(event);
+  } catch (error) {
+    console.error("Error al cargar el evento:", error);
+    // Puedes manejar el error aquí, por ejemplo, mostrar un mensaje de error al usuario.
+  }
+}
+onColorSelected(color: string) {
+  // Al seleccionar un color en el input, almacénalo en el servicio
+  this.modalServices.setSelectedColor(color);
 }
 
   

@@ -161,3 +161,11 @@ a{
  .butto-delete{
     background-color: red;
  }
+
+ .fc-event {
+   border: none; /* Elimina el borde */
+   /* Otros estilos personalizados, como el fondo o el color de fuente */
+ }
+
+
+ 

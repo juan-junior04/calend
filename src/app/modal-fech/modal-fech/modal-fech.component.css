@@ -1,0 +1,66 @@
+/* Estilo del modal principal */
+.modal-container {
+    width: 400px;
+    max-width: 90%;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente el contenido */
+}
+
+/* Estilo de la "X" (botón de cierre) en la parte superior derecha */
+.modal-container .close-button {
+    align-self: flex-end; /* Alinea el botón a la derecha */
+    background: transparent;
+    border: none;
+    color: #777;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Estilo del encabezado del modal */
+.modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo del contenido del modal */
+.modal-body {
+    padding: 20px; /* Opcional: agrega espacio interno si es necesario */
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+/* Estilo para los párrafos del contenido */
+.modal-body p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el contenedor de botones */
+.botones {
+    justify-content: end;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px; /* Espacio entre el contenido y los botones */
+}
+
+/* Estilo para los botones */
+.modal-container .delete-button {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+update-button{
+    background: #0E7FD8 ;
+}

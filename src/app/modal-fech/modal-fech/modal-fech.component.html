@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <div class="modal-container">
+        <button pButton pRipple type="button" 
+            icon="pi pi-times" 
+            class="close-button"
+            (click)="close()"
+        ></button>
+        <div class="modal-header">
+            <h3>Detalles del Evento</h3>
+        </div>
+        <div class="modal-body">
+            <p><strong>Nombre del evento:</strong> {{ evento?.nombre_empresa}}</p>
+            <p><strong>Fecha de inicio:</strong> {{ evento?.inicio }}</p>
+            <p><strong>Fecha de finalización:</strong> {{ evento?.finalizar }}</p>
+            <p><strong>Observación:</strong> {{ evento?.observacion }}</p>
+            <p><strong>Progreso:</strong> {{ evento?.barra}}%</p>
+        </div>
+        <div class="botones">
+        <button pButton pRipple type="button" 
+            icon="pi pi-trash" 
+            class="delete-button"
+            (click)="deleteEvent()"
+        ></button>
+        <button pButton pRipple type="button" 
+            icon="pi pi-undo" 
+            class="update-button"
+            (click)="updateData()"
+        ></button>
+    </div>
+    </div>
+    
+</body>
+</html>

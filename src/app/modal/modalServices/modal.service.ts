@@ -10,6 +10,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class ModalService {
   
   bsModalRef: BsModalRef | undefined;
+  selectedColor: string = '';
   
 
   constructor(private modalService: BsModalService,
@@ -17,14 +18,16 @@ export class ModalService {
 
   openModal() {
     this.bsModalRef = this.modalService.show(ModalComponent, { class: 'modal-md' });
+    return this.bsModalRef;
   }
+  
 
   close(){
     this.bsModalRef?.hide();
   }
 
   findAll(){
-    return  this.http.get('http://localhost/backend');
+    return  this.http.get('http://localhost/backend/index.php?action=findAll');
   }
 
   saveEvent(event:any){
@@ -32,7 +35,9 @@ export class ModalService {
   }
 
   updateEvent(event:any){
-    return this.http.patch('http://localhost/backend',event);
+   
+    return this.http.put('http://localhost/backend/', event)
+
   }
 
   deleteEvent(id:number){
@@ -45,6 +50,15 @@ export class ModalService {
       body: id,
     };
     return this.http.delete('http://localhost/backend/',options);
+  }
+  
+
+  setSelectedColor(color: string) {
+    this.selectedColor = color;
+  }
+
+  getSelectedColor() {
+    return this.selectedColor;
   }
 
 }

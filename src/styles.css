@@ -28,6 +28,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   height: 600px;
 }
 
+button.p-button:active {
+  outline: none !important; /* Quita el borde al hacer clic */
+  border: none !important; /* Quita cualquier borde al hacer clic */
+}
 
 
+.fc-event {
+  border: none;
+}
+
+.p-progressbar-value {
+  background-color: red;
+}
 

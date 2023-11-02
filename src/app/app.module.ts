@@ -36,7 +36,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatButtonModule} from '@angular/material/button';
-import {NgIf} from '@angular/common';
+import {DatePipe, NgIf} from '@angular/common';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { TableModule } from 'primeng/table';
 import { FileUploadModule } from 'primeng/fileupload';
@@ -46,6 +46,8 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { DialogModule } from 'primeng/dialog';
 import { MessageService } from 'primeng/api';
 import { ModalDeleteComponent } from './modal-delete/modal-delete.component';
+import { ModalFechComponent } from './modal-fech/modal-fech/modal-fech.component';
+
 
 
 
@@ -54,7 +56,8 @@ import { ModalDeleteComponent } from './modal-delete/modal-delete.component';
     AppComponent,
     ModalComponent,
     SidenavComponent,
-    ModalDeleteComponent
+    ModalDeleteComponent,
+    ModalFechComponent,
   
   ],
   imports: [
@@ -102,7 +105,7 @@ import { ModalDeleteComponent } from './modal-delete/modal-delete.component';
 		ButtonModule
     
   ],
-  providers: [ModalModule,ModalComponent,HttpClient,MessageService],
+  providers: [ModalModule,ModalComponent,HttpClient,MessageService, DatePipe,ModalFechComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

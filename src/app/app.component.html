@@ -92,6 +92,7 @@
           (click)="changeMonth(2023, 9)"
           >Septiembre</button>
       </div>
+ 
       
       <div class="boton-agregar-div">
           <button pButton pRipple class="boton-side" type="button" 
@@ -143,6 +144,7 @@
                                     <th>Inicio</th>
                                     <th>Finalizar</th>
                                     <th>Observacion</th>
+                                    <th>Progreso</th>
                                     <th></th>
                                 </tr>
                             </ng-template>
@@ -180,11 +182,17 @@
                                         {{customer.observacion}}
                                     </td>
                                     <td style="min-width: 200px;">
+                                        <div class="col">
+                                            <p-progressBar [value]="customer.barra" [showValue]="true" [style]="{ 'background-color': customer.color }"  >
+                                            </p-progressBar>
+                                        </div>
+                                    </td>
+                                    <td style="min-width: 200px;">
                                         <span class="button-function">
-                                            <button pButton pRipple icon="pi pi-undo" class="butto-view"></button>
-                                            <button pButton pRipple  icon="pi pi-eye" 
-                                            (click)="cargarFormu(customer)"
-                                            class="butto-update"></button>
+                                          
+                                            <button pButton pRipple  icon="pi pi-undo" 
+                                            class="butto-update"
+                                            (click)="penModalWithFormData(customer)"></button>
                                             <button pButton pRipple
                                             icon="pi pi-trash" class="butto-delete"
                                             (click)="openDelete(customer)"></button>
