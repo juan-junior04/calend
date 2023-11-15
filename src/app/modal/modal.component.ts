@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ModalService } from './modalServices/modal.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { NotificationService } from '../notification/notification.service';
 
 @Component({
   selector: 'app-modal',
@@ -28,6 +29,8 @@ export class ModalComponent {
   constructor
   (public bsModalRef: BsModalRef,
   private fb: FormBuilder,private modalServices:ModalService,
+  private notificationService: NotificationService
+    
 ) 
   {
     this.formulario = this.fb.group({
@@ -62,6 +65,7 @@ export class ModalComponent {
       // Luego de guardar el evento, puedes manejar la respuesta aquí si es necesario.
       console.log('Evento creado:', response);
       window.location.reload();
+      this.notificationService.showNotification("Instrumentacion y Control S.A.S","Se ha Agregado",event.nombre_empresa,event.finalizar)
       // Aquí puedes realizar otras acciones después de guardar el evento.
     },
     );
@@ -71,6 +75,7 @@ export class ModalComponent {
       // Luego de actualizar el evento, puedes manejar la respuesta aquí si es necesario.
       console.log('Evento actualizado:', response);
       window.location.reload();
+      this.notificationService.showNotification("Instrumentacion y Control S.A.S","Se ha Actualizado",event.nombre_empresa,event.finalizar)
       // Aquí puedes realizar otras acciones después de actualizar el evento.
     });
   }
@@ -79,16 +84,9 @@ export class ModalComponent {
 
 cargarEvento(event: any) {
   try {
-    // Formatear los campos 'inicio' y 'finalizar' al formato 'mes/día/año'
-  
-    // Actualizar el objeto 'event' con los campos formateados
-
-
-    // Actualizar todo el formulario con el objeto 'event' modificado
     this.formulario.setValue(event);
   } catch (error) {
     console.error("Error al cargar el evento:", error);
-    // Puedes manejar el error aquí, por ejemplo, mostrar un mensaje de error al usuario.
   }
 }
 onColorSelected(color: string) {

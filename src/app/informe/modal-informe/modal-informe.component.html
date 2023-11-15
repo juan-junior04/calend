@@ -1,0 +1,65 @@
+<form [formGroup]="formularioInforme" class="formulariInforme" >
+    <div class="formularioInforme">
+  
+        <div>
+        <span class="p-float-label">
+            <p-calendar [showIcon]="true"  dateFormat="yy-mm-dd" id="float-input" formControlName="fecha" ></p-calendar>
+            <label for="float-input">Fecha</label>
+        </span>
+        </div>
+
+        <div>
+        <span>
+            <input   
+            id="float-input" 
+            type="text"
+            formControlName="nombre_labor" 
+            placeholder="Nombre Labor"
+            pInputText>
+         </span>
+        </div>
+
+        <div>
+         <span>
+            <input  
+            class="cantidad"
+            id="float-input" 
+            type="number"
+            formControlName="cantidad"
+            placeholder="Cantidad"
+            pInputText>
+        </span>
+        <span>
+            <input  class="personalizado" 
+            id="float-input" 
+            type="text"
+            formControlName="instrumento"
+            placeholder="Instrumento"
+            pInputText>
+         </span>
+        </div>
+
+         <div class="form-group">
+            <span class="p-float-label">
+              <textarea rows="5"
+               cols="30" 
+               placeholder="Agregar Labor" 
+               formControlName="observacion" 
+               pInputTextarea></textarea>
+              <label for="float-input">Observacion</label>
+            </span>
+          </div>
+  
+    <div >
+      <div class="buttons-container">
+          <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" 
+          (click)="createinforme()"></button>
+          <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger" 
+          (click)="closeInformeModal()"></button>
+      </div>
+  </div>
+  
+  
+  </div>
+  </form>
+  

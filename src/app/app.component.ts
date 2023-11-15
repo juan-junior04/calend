@@ -10,6 +10,7 @@ import { ModalDeleteService } from './modal-delete/modal-delete-services/modal-d
 import { DatePipe } from '@angular/common';
 import { ModalFechService } from './modal-fech/modal-fech/modal-fech.service';
 import { ModalFechComponent } from './modal-fech/modal-fech/modal-fech.component';
+import { NotificationService } from './notification/notification.service';
 
 
 
@@ -29,8 +30,8 @@ export class AppComponent {
     private modalDelete:ModalDeleteService,
     private datePipe: DatePipe,
     private modalFech:ModalFechService,
-    private modalbs: BsModalService
-    
+    private modalbs: BsModalService,
+ 
     
     ){
     
@@ -156,55 +157,7 @@ openDelete(event:any){
     }
   }
 
-  lista:any = [{
-    id:"1",
-    nombre_empresa:"Carupana",
-    telefono:"3126190683",
-    direccion:"Mz 17 Lt 9",
-    email:"juandavidruedaramirez7@gamil.com",
-    inicio:"12/05/2023",
-    finalizacion:"12/05/2023",
-    observacion:"Calibracion de Manometro"
-  },{
-    id:"1",
-    nombre_empresa:"Carupana",
-    telefono:"3126190683",
-    direccion:"Mz 17 Lt 9",
-    email:"juandavidruedaramirez7@gamil.com",
-    inicio:"12/05/2023",
-    finalizacion:"12/05/2023",
-    observacion:"Calibracion de Manometro"
-  },
-  {
-    id:"1",
-    nombre_empresa:"Carupana",
-    telefono:"3126190683",
-    direccion:"Mz 17 Lt 9",
-    email:"juandavidruedaramirez7@gamil.com",
-    inicio:"12/05/2023",
-    finalizacion:"12/05/2023",
-    observacion:"Calibracion de Manometro"
-  },
-  {
-    id:"1",
-    nombre_empresa:"Carupana",
-    telefono:"3126190683",
-    direccion:"Mz 17 Lt 9",
-    email:"juandavidruedaramirez7@gamil.com",
-    inicio:"12/05/2023",
-    finalizacion:"12/05/2023",
-    observacion:"Calibracion de Manometro"
-  },
-  {
-    id:"1",
-    nombre_empresa:"Carupana",
-    telefono:"3126190683",
-    direccion:"Mz 17 Lt 9",
-    email:"juandavidruedaramirez7@gamil.com",
-    inicio:"12/05/2023",
-    finalizacion:"12/05/2023",
-    observacion:"Calibracion de Manometro"
-  }]
+  
 
   getProgressBarClass() {
     return {
@@ -213,4 +166,6 @@ openDelete(event:any){
     };
   }
  
+
+  
 }

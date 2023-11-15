@@ -17,7 +17,14 @@ closeDelete(){
 }
 
 delete(){
-  this.modalDelete.deleteEvent(this.modalDelete.eventoDelete)
+  if(this.modalDelete.eventoDelete.nombre_empresa){
+    this.modalDelete.deleteEvent(this.modalDelete.eventoDelete)
+  }
+
+  if(this.modalDelete.eventoDelete.nombre_labor){
+    this.modalDelete.deleteInforme(this.modalDelete.eventoDelete)
+  }
+  
 }
 
 }

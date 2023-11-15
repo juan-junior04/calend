@@ -31,12 +31,12 @@ export class ModalService {
   }
 
   saveEvent(event:any){
-    return this.http.post('http://localhost/backend/',event);
+    return this.http.post('http://localhost/backend/index.php?action=save',event);
   }
 
   updateEvent(event:any){
    
-    return this.http.put('http://localhost/backend/', event)
+    return this.http.put('http://localhost/backend/index.php?action=update', event)
 
   }
 
@@ -49,7 +49,7 @@ export class ModalService {
       }),
       body: id,
     };
-    return this.http.delete('http://localhost/backend/',options);
+    return this.http.delete('http://localhost/backend/index.php?action=delete',options);
   }
   
 

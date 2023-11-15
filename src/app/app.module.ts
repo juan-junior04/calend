@@ -47,6 +47,8 @@ import { DialogModule } from 'primeng/dialog';
 import { MessageService } from 'primeng/api';
 import { ModalDeleteComponent } from './modal-delete/modal-delete.component';
 import { ModalFechComponent } from './modal-fech/modal-fech/modal-fech.component';
+import { InformeComponent } from './informe/informe.component';
+import { ModalInformeComponent } from './informe/modal-informe/modal-informe.component';
 
 
 
@@ -58,6 +60,8 @@ import { ModalFechComponent } from './modal-fech/modal-fech/modal-fech.component
     SidenavComponent,
     ModalDeleteComponent,
     ModalFechComponent,
+    InformeComponent,
+    ModalInformeComponent,
   
   ],
   imports: [

@@ -1,0 +1,27 @@
+<div class="barra-menu">
+    <button (click)="openModalInforme()">abrir</button>
+</div>
+<div class="card-container">
+<div *ngFor="let informe of informes">
+    <div class="card">
+        <div class="informe">
+            <div class="buttons-container">
+                <button pButton pRipple type="button" icon="pi pi-undo" class="p-button-rounded"
+                (click)="updateInforme(informe)" ></button>
+                <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
+                (click)="openDelete(informe)" ></button>
+            </div>
+           
+            <p><strong>Fecha:</strong> {{ informe?.fecha}}</p>
+            <p><strong>Nombre:</strong> {{ informe?.nombre_labor}}</p>
+            <p><strong>Cantidad:</strong> {{ informe?.cantidad}}</p>
+            <p><strong>Instrumento:</strong> {{ informe?.instrumento}}</p>
+            <p><strong>Observacion:</strong><div class="observacion">{{ informe?.observacion }}</div>
+          
+        
+       
+        </div>
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,17 @@
+
+
+.formularioInforme{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 10px;
+}
+.cantidad{
+    width: 60px;
+}
+.buttons-container{
+    display: flex;
+    justify-content: end;
+    margin-right: 5px;
+    gap: 5px;
+}
