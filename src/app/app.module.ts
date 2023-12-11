@@ -1,40 +1,40 @@
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { FullCalendarModule } from '@fullcalendar/angular';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TabViewModule } from 'primeng/tabview';
-import { PanelModule } from 'primeng/panel';
-import { ModalComponent } from './modal/modal.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { InputTextModule } from "primeng/inputtext";
-import { ButtonModule } from 'primeng/button';
-import { AutoCompleteModule } from "primeng/autocomplete";
-import { CalendarModule } from "primeng/calendar";
-import { ChipsModule } from "primeng/chips";
-import { ChipModule } from "primeng/chip";
-import { DropdownModule } from "primeng/dropdown";
-import { InputMaskModule } from "primeng/inputmask";
-import { InputNumberModule } from "primeng/inputnumber";
-import { CascadeSelectModule } from "primeng/cascadeselect";
-import { MultiSelectModule } from "primeng/multiselect";
-import { InputTextareaModule } from "primeng/inputtextarea";
-import { RatingModule } from 'primeng/rating';
-import { KnobModule } from 'primeng/knob';
-import { ListboxModule } from 'primeng/listbox';
-import { SelectButtonModule } from 'primeng/selectbutton';
-import { CheckboxModule } from 'primeng/checkbox';
-import { InputSwitchModule } from 'primeng/inputswitch';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { ColorPickerModule } from 'primeng/colorpicker';
-import { ToggleButtonModule } from 'primeng/togglebutton';
-import { SliderModule } from 'primeng/slider';
-import { HttpClient } from '@angular/common/http';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { SidenavComponent } from './sidenav/sidenav.component';
+import {NgModule } from '@angular/core';
+import {HttpClientModule } from '@angular/common/http';
+import {BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppRoutingModule } from './app-routing.module';
+import {AppComponent } from './app.component';
+import {FullCalendarModule } from '@fullcalendar/angular';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {TabViewModule } from 'primeng/tabview';
+import {PanelModule } from 'primeng/panel';
+import {ModalComponent } from './modal/modal.component';
+import {ModalModule } from 'ngx-bootstrap/modal';
+import {InputTextModule } from "primeng/inputtext";
+import {ButtonModule } from 'primeng/button';
+import {AutoCompleteModule } from "primeng/autocomplete";
+import {CalendarModule } from "primeng/calendar";
+import {ChipsModule } from "primeng/chips";
+import {ChipModule } from "primeng/chip";
+import {DropdownModule } from "primeng/dropdown";
+import {InputMaskModule } from "primeng/inputmask";
+import {InputNumberModule } from "primeng/inputnumber";
+import {CascadeSelectModule } from "primeng/cascadeselect";
+import {MultiSelectModule } from "primeng/multiselect";
+import {InputTextareaModule } from "primeng/inputtextarea";
+import {RatingModule } from 'primeng/rating';
+import {KnobModule } from 'primeng/knob';
+import {ListboxModule } from 'primeng/listbox';
+import {SelectButtonModule } from 'primeng/selectbutton';
+import {CheckboxModule } from 'primeng/checkbox';
+import {InputSwitchModule } from 'primeng/inputswitch';
+import {RadioButtonModule } from 'primeng/radiobutton';
+import {ColorPickerModule } from 'primeng/colorpicker';
+import {ToggleButtonModule } from 'primeng/togglebutton';
+import {SliderModule } from 'primeng/slider';
+import {HttpClient } from '@angular/common/http';
+import {MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {SidenavComponent } from './sidenav/sidenav.component';
 import {MatButtonModule} from '@angular/material/button';
 import {DatePipe, NgIf} from '@angular/common';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -49,6 +49,9 @@ import { ModalDeleteComponent } from './modal-delete/modal-delete.component';
 import { ModalFechComponent } from './modal-fech/modal-fech/modal-fech.component';
 import { InformeComponent } from './informe/informe.component';
 import { ModalInformeComponent } from './informe/modal-informe/modal-informe.component';
+import { LoginComponent } from './login/login/login.component';
+import { RouterModule } from '@angular/router';
+import { ImagenViewComponent } from './imagen-view/imagen-view.component';
 
 
 
@@ -62,9 +65,13 @@ import { ModalInformeComponent } from './informe/modal-informe/modal-informe.com
     ModalFechComponent,
     InformeComponent,
     ModalInformeComponent,
+    LoginComponent,
+    ImagenViewComponent,
   
   ],
   imports: [
+	RouterModule, // Añade RouterModule aquí
+    AppRoutingModule,
 	NgIf,
 	MatButtonModule,
 	MatSidenavModule,

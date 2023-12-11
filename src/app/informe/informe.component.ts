@@ -11,7 +11,7 @@ export class InformeComponent {
   informes:any[] =[]
   ngOnInit() {
     this.servicesInforme.findAllInforme().subscribe((resp: any) => {
-      this.informes = resp;
+      this.informes = resp.sort((a:any, b:any) => b.id - a.id);
     })}
   constructor
   (private servicesInforme:InformeApiService,

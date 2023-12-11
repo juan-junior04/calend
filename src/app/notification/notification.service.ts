@@ -9,7 +9,7 @@ export class NotificationService {
   showNotification(title: string,action:any,nombre_empresa:any,fechaFinal:any): void {
     Push.create(title, {
       body: `${action} ${nombre_empresa} Para el ${fechaFinal}`,
-      icon: 'assets/WhatsApp_Image_2023-10-10_at_10.56.40_AM-transformed.png',
+      icon: 'C:/Users/Toshiba/Desktop/prueba/calend/src/assets/logo.jpeg',
 
     });
   }

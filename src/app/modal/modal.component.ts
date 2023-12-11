@@ -14,6 +14,7 @@ import { NotificationService } from '../notification/notification.service';
 export class ModalComponent {
   formulario:FormGroup<any>;
   procentaje = [
+    { label: '0%', value:"0"},
     { label: '10%', value:"10"},
     { label: '20%', value:"20"},
     { label: '30%', value:"30"},
@@ -44,7 +45,8 @@ export class ModalComponent {
       inicio: new FormControl('',Validators.required),
       finalizar: new FormControl('',Validators.required),
       color: new FormControl('',Validators.required),
-      barra: new FormControl('',Validators.required)
+      barra: new FormControl('',Validators.required),
+      imagen: new FormControl('',Validators.required)
     })
 
 

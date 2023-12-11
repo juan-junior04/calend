@@ -1,0 +1,37 @@
+<!-- login.component.html -->
+<body>
+
+    <div class="login-container">
+        <div class="forma-formulario">  
+        
+      <img src="assets/WhatsApp_Image_2023-10-10_at_10.56.40_AM-transformed.png"  class="logo-formulario">
+      <form [formGroup]="user" >
+        <div class="formulario">
+          <div class="inputs">
+              <div *ngIf="error" class="card">
+                <h3>Usuario o contraseña incorrecta!</h3>
+              </div>
+            <div class="col-12 mb-2 lg:col-4 lg:mb-0">
+              <span class="p-input-icon-left">
+                <i class="pi pi-user"></i>
+                <input type="text" pInputText placeholder="Username" formControlName="username"/>
+              </span>
+            </div>
+            <div class="col-12 mb-2 lg:col-4 lg:mb-0">
+              <span class="p-input-icon-left">
+                <i class="pi pi-user"></i>
+                <input type="text" pInputText placeholder="Password" formControlName="password"/>
+              </span>
+            </div>
+          </div>
+          
+        
+          <button class="boton-ingresar" (click)="login()">Ingresar</button>
+          
+        </div>
+    </form>
+    </div>
+
+</div>
+  </body>
+  

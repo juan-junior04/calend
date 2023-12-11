@@ -1,0 +1,70 @@
+/* login.component.css */
+
+.login-container {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #BAFF76 50%, #005856 50%);
+  justify-content: center;
+  align-items: center;
+}
+
+.forma-formulario {
+  padding: 20px; /* Adjust padding for smaller screens */
+  border-radius: 10px;
+  background-color: white;
+  max-width: 400px; /* Set a maximum width for the container */
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  gap: 10px;
+}
+
+.logo-formulario {
+  max-width: 100%; /* Make sure the logo is responsive */
+  height: auto; /* Maintain the aspect ratio of the logo */
+}
+.inputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.boton-ingresar{
+  width: 200px;
+  height: 41px;
+  border-radius: 6px;
+  background-color: #005856;
+  color: white;
+  border: none;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: red;
+
+
+}
+
+/* Media query for screens smaller than 600px */
+@media only screen and (max-width: 600px) {
+  .login-container {
+      padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .forma-formulario {
+      padding: 10px; /* Adjust padding for smaller screens */
+  }
+}

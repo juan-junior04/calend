@@ -17,7 +17,8 @@ export class ModalInformeComponent {
       nombre_labor: new FormControl('',Validators.required),
       cantidad: new FormControl('',Validators.required),
       instrumento: new FormControl('',Validators.required),
-      observacion: new FormControl('',Validators.required)
+      observacion: new FormControl('',Validators.required),
+      imagen: new FormControl('',Validators.required)
     })
 
   }

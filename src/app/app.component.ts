@@ -11,6 +11,10 @@ import { DatePipe } from '@angular/common';
 import { ModalFechService } from './modal-fech/modal-fech/modal-fech.service';
 import { ModalFechComponent } from './modal-fech/modal-fech/modal-fech.component';
 import { NotificationService } from './notification/notification.service';
+import { MatDrawer } from '@angular/material/sidenav';
+import { SharedDataService } from './shared-data.service';
+import { ImagenServicesService } from './imagen-view/imagen-services.service';
+
 
 
 
@@ -23,6 +27,7 @@ import { NotificationService } from './notification/notification.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  logiado = false;
   bsModalRef!: BsModalRef;
   elementRef: any;
 
@@ -31,27 +36,36 @@ export class AppComponent {
     private datePipe: DatePipe,
     private modalFech:ModalFechService,
     private modalbs: BsModalService,
+    private sharedDataService: SharedDataService,
+    private servicesImagen:ImagenServicesService
+
  
     
     ){
     
   }
   ngOnInit() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    this.logiado = isLoggedIn === 'true';
+
+
     this.modalService.findAll().subscribe((resp: any) => {
-      this.eventos = resp;
+
+      this.eventos = resp.sort((a:any, b:any) => b.id - a.id);
 
       this.eventos.forEach(event => {
         // Convierte la fecha final a un objeto Date
         const fechaFinal = new Date(event.finalizar);
-    
         // Agrega un día
         fechaFinal.setDate(fechaFinal.getDate() + 1);
-    
         // Actualiza la propiedad 'end' de cada evento
         event.end = fechaFinal;
         console.log(event.end)
       });
       
+      this.sharedDataService.getLoggedIn().subscribe((loggedIn: boolean) => {
+        this.logiado = loggedIn;
+      });
    
      
       // Define calendarOptions aquí después de cargar los eventos
@@ -73,6 +87,7 @@ export class AppComponent {
           className: 'custom-event',
           observacion: event.observacion,
           barra: event.barra,
+          imagen: event.imagen,
         })),
         locale: esLocale,
         eventClick: this.openModalWithEventData.bind(this),
@@ -84,7 +99,17 @@ export class AppComponent {
   
       
     });
-    
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const barra = document.querySelector('.abrirBarras');
+      barra?.classList.add('abrirBarra');
+   });
+
+   document.addEventListener('DOMContentLoaded', function() {
+    const barra = document.querySelector('.abrirBarrasTabla');
+    barra?.classList.add('abrirBarra');
+ });
+
   }
 
   showFiller = false;
@@ -92,6 +117,7 @@ export class AppComponent {
   eventos:any[]=[]
 
   @ViewChild('calendar') appComponent: FullCalendarComponent | undefined;
+  @ViewChild(MatDrawer) miCajon: MatDrawer | undefined;;
 
   calendarOptions = {
     initialView: 'dayGridMonth',
@@ -103,10 +129,60 @@ export class AppComponent {
     
     // Otras opciones de configuración
   };
+
+  
+closeSession() {
+  this.logiado = false;
+  localStorage.removeItem('isLoggedIn');
+}
+
+mostrarImagen(imagen: string) {
+
+  console.log('Mostrar imagen:', imagen);
+
+}
+
+
+  
+  abrirCajon(cajon: MatDrawer) {
+    // Cambiar el estado del cajón a abierto
+    cajon.open();
+    this.adjustMargin()
+  }
+
+
+  adjustMargin() {
+    // Verificar que miCajon no sea nulo o indefinido antes de realizar operaciones
+    if (this.miCajon) {
+      const contenido = document.querySelector('.custom-calendar');
+      const contenido2 = document.querySelector('.card');
+      const barra = document.querySelector('.abrirBarra');
+      const barra2 = document.querySelector('.abrirBarraTabla');
+     
+      
+
+      if (this.miCajon.opened) {
+        contenido?.classList.remove('con-margen');
+        contenido2?.classList.remove('con-margen');
+        barra?.classList.remove('abrirBarras')
+        barra2?.classList.remove('abrirBarras')
+  
+      } else {
+        contenido?.classList.add('con-margen');
+        contenido2?.classList.add('con-margen');
+        barra?.classList.add('abrirBarras')
+        barra2?.classList.add('abrirBarras')
+      }
+    }
+  }
+
+  cerrarCajon(cajon: MatDrawer) {
+    // Cambiar el estado del cajón a cerrado
+    cajon.close();
+    this.adjustMargin()
+  }
   openModalFech(evento: any) {
     this.bsModalRef = this.modalbs.show(ModalFechComponent, { class: 'modal-md' });
-    
-    // Pasa el día seleccionado al modal
     this.bsModalRef.content.diaSeleccionado = evento;
   }
 
@@ -124,11 +200,12 @@ export class AppComponent {
       telefono:info.event.extendedProps.telefono,
       direccion:info.event.extendedProps.direccion,
       color:info.event.backgroundColor,
-      barra:info.event.extendedProps.barra
+      barra:info.event.extendedProps.barra,
+      imagen:info.event.extendedProps.imagen
   };
   
     this.modalFech.openModal(evento);
-    console.log(evento.barra)
+    console.log(evento.imagen)
   }
 
 openDelete(event:any){
@@ -151,10 +228,13 @@ openDelete(event:any){
 
   //function mes calendario.
   changeMonth(year: number, month: number) {
+   
     if (this.appComponent) {
+      
       const calendarApi = this.appComponent.getApi(); 
       calendarApi.gotoDate(`${year}-${String(month).padStart(2, '0')}-01`); 
     }
+  
   }
 
   
@@ -166,6 +246,10 @@ openDelete(event:any){
     };
   }
  
+
+  openModalImagen(){
+    this.servicesImagen.openModal();
+  }
 
   
 }

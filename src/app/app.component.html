@@ -1,3 +1,6 @@
+<!-- app.component.html -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +14,20 @@
   
 </head>
 <body>
-  
 
-  <!-- Utilizar el componente de modal Bootstrap -->
+
+ 
+    <div *ngIf="logiado">
 
 <mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened  class="barra">
+    
+  <mat-drawer  #miCajon mode="side" opened class="barra">
+    
+
+<div class="cerrarBarra">
+    <button pButton pRipple  icon="pi pi-times"  (click)="cerrarCajon(miCajon)"  ></button>
+</div>
+
     <div class="logo">
       <img src="assets/WhatsApp_Image_2023-10-10_at_10.56.40_AM-transformed.png" 
       alt="" class="imagen-logo"> 
@@ -114,14 +125,33 @@
           (click)="changeMonth(2023, 12)"
           >Diciembre</button>
       </div>
+
+      <div class="boton-agregar-div">
+        <button pButton pRipple class="boton-side" type="button" 
+        class="boton-mes-rojo"
+        (click)="closeSession()"
+        >Cerrar</button>
     </div>
+      
+    </div>
+
+   
   </mat-drawer>
+  
   <mat-drawer-content class="contenido">
 <p-tabView >
+
+    
+
                 <p-tabPanel header="Calendario" class="contenido">
+                    
                     <div class="calendar-container">
                       <div class="calendar" >
+                        <div class="abrirBarra">
+                            <button  pButton pRipple  icon="pi pi-ellipsis-v" (click)="abrirCajon(miCajon)"></button>
+                        </div>
                         <full-calendar
+                        
                           #calendar
                           [options]="calendarOptions"
                           class="custom-calendar"
@@ -131,6 +161,9 @@
                 </p-tabPanel>
 
                 <p-tabPanel header="Tabla" class="">
+                    <div class="abrirBarraTabla">
+                        <button  pButton pRipple  icon="pi pi-ellipsis-v" (click)="abrirCajon(miCajon)"></button>
+                    </div>
                     <div class="card">
                         <p-table  [value]="eventos"  >
                             <ng-template pTemplate="header">
@@ -144,6 +177,7 @@
                                     <th>Inicio</th>
                                     <th>Finalizar</th>
                                     <th>Observacion</th>
+                                    <th>Regristro</th>
                                     <th>Progreso</th>
                                     <th></th>
                                 </tr>
@@ -182,6 +216,10 @@
                                         {{customer.observacion}}
                                     </td>
                                     <td style="min-width: 200px;">
+                                        <img [src]="customer.imagen" alt="Imagen del Evento" style="max-width: 100%;" (click)="mostrarImagen(customer.imagen)">
+                                    </td>
+                                    
+                                    <td style="min-width: 200px;">
                                         <div class="col">
                                             <p-progressBar [value]="customer.barra" [showValue]="true" [style]="{ 'background-color': customer.color }"  >
                                             </p-progressBar>
@@ -189,7 +227,9 @@
                                     </td>
                                     <td style="min-width: 200px;">
                                         <span class="button-function">
-                                          
+                                            <button pButton pRipple  icon="pi pi-instagram" 
+                                            class="butto-update"
+                                            (click)="openModalImagen()"></button>
                                             <button pButton pRipple  icon="pi pi-undo" 
                                             class="butto-update"
                                             (click)="penModalWithFormData(customer)"></button>
@@ -205,6 +245,7 @@
                     </div>
                 </p-tabPanel>
                 <p-tabPanel header="Informe" class="contenido">
+                    
                     <div class="calendar-container">
                       <app-informe></app-informe>
                       </div>
@@ -213,7 +254,9 @@
             </p-tabView>
   </mat-drawer-content>
 </mat-drawer-container>
+</div>
 
+<app-login *ngIf="!logiado"></app-login>
 </body>
 </html>
 <script src="js/ .js"></script>

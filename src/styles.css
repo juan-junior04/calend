@@ -16,6 +16,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-bottom: 0;
 }
 
+
 .p-tabview .p-tabview-panels {
   background: #ffffff;
   border: 0 none;
@@ -25,7 +26,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .p-tabview-panels{
-  height: 600px;
+  height: 94vh
 }
 
 button.p-button:active {
